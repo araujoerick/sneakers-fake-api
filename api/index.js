@@ -1,49 +1,55 @@
-// Importa o Fastify
 const fastify = require("fastify")();
+const cors = require("@fastify/cors");
+
+// Habilita CORS para todas as origens
+fastify.register(cors, {
+	origin: true, // Permite todas as origens
+	methods: ["GET"], // Define os métodos permitidos (GET neste caso)
+});
 
 // Exemplo de dados de tênis Air Jordan
 const tenisAirJordan = [
 	{
 		id: 1,
-		nome: "Air Jordan 1 Retro High OG",
+		nome: "Air Jordan 1 Mid Dutch Green",
 		preco: 150,
-		categoria: "Casual",
-		imagem: "https://example.com/air-jordan-1.jpg",
+		categoria: "Basketball",
+		imagem: "https://imgbox.com/eCxBaABi",
 	},
 	{
 		id: 2,
-		nome: "Air Jordan 4 Retro",
+		nome: "Air Jordan 1 Mid Chicago Black Toe",
 		preco: 200,
 		categoria: "Basketball",
-		imagem: "https://example.com/air-jordan-4.jpg",
+		imagem: "https://imgbox.com/odbxvxyt",
 	},
 	{
 		id: 3,
-		nome: "Air Jordan 11 Retro",
+		nome: "Air Jordan 1 Mid Se Lightbulb",
 		preco: 220,
 		categoria: "Basketball",
-		imagem: "https://example.com/air-jordan-11.jpg",
+		imagem: "https://imgbox.com/X9yP6kBe",
 	},
 	{
 		id: 4,
-		nome: "Air Jordan 3 Retro",
+		nome: "Air Jordan 1 Retro High Tie Dye",
 		preco: 180,
-		categoria: "Casual",
-		imagem: "https://example.com/air-jordan-3.jpg",
+		categoria: "Basketball",
+		imagem: "https://imgbox.com/rTlTVW0q",
 	},
 	{
 		id: 5,
-		nome: "Air Jordan 6 Retro",
+		nome: "Air Jordan 1 Mid Hyper Royal Tumbled Leather",
 		preco: 210,
 		categoria: "Basketball",
-		imagem: "https://example.com/air-jordan-6.jpg",
+		imagem: "https://imgbox.com/NI46K1WM",
 	},
 	{
 		id: 6,
-		nome: "Air Jordan 5 Retro",
+		nome: "Air Jordan 1 Retro High Tokyo Bio Hack",
 		preco: 190,
 		categoria: "Casual",
-		imagem: "https://example.com/air-jordan-5.jpg",
+		imagem: "https://imgbox.com/sNW9WzDz",
 	},
 ];
 
