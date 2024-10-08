@@ -1,9 +1,15 @@
 const fastify = require("fastify")();
 const cors = require("@fastify/cors");
+const rateLimit = require("@fastify/rate-limit");
 
 fastify.register(cors, {
 	origin: true, // Permite todas as origens
 	methods: ["GET"],
+});
+
+fastify.register(rateLimit, {
+	max: 5, // Número máximo de requisições permitidas
+	timeWindow: "2 minute",
 });
 
 const tenisAirJordan = [
